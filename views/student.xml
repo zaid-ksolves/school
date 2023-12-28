@@ -22,7 +22,16 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="rollNo"/>
+                        <field name="age"/>
+                        <field name="date_of_birth"/>
                         <field name="gender"/>
+                        <field name="english"/>
+                        <field name="hindi"/>
+                        <field name="maths"/>
+                        <field name="physics"/>
+                        <field name="chemistry"/>
+                        <field name="total_marks"/>
                     </group>
                 </sheet>
             </form>
@@ -35,7 +44,17 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="rollNo"/>
                 <field name="age"/>
+                <field name="date_of_birth"/>
+                <!--                <field name="subjects"/>-->
+                <field name="gender"/>
+                <field name="english"/>
+                <field name="hindi"/>
+                <field name="maths"/>
+                <field name="physics"/>
+                <field name="chemistry"/>
+                <field name="total_marks"/>
             </tree>
         </field>
     </record>
@@ -61,8 +80,14 @@
                     <field name="name"/>
                     <field name="gender"/>
                     <field name="age"/>
-                    <field name="subjects" widget="many2many_tags"/>
+                    <!--                    <field name="subjects" widget="many2many_tags"/>-->
                     <field name="school_id"/>
+                    <field name="english"/>
+                    <field name="hindi"/>
+                    <field name="maths"/>
+                    <field name="physics"/>
+                    <field name="chemistry"/>
+                    <field name="total_marks"/>
                 </group>
             </form>
         </field>

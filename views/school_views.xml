@@ -10,6 +10,9 @@
                         <field name="name"/>
                         <field name="students" widget="many2many_tags"/>
                     </group>
+                    <group>
+                        <field name="rollNo"/>
+                    </group>
                 </form>
             </field>
         </record>
@@ -18,7 +21,7 @@
     <record id="action_school" model="ir.actions.act_window">
         <field name="name">School</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">school.lecture</field>
+        <field name="res_model">school.school</field>
         <field name="view_mode">tree,form,kanban</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">

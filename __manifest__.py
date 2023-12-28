@@ -8,7 +8,6 @@
         'security/security.xml',
         'views/menu.xml',
         'views/student.xml',
-        'views/lecture.xml',
         'views/school_views.xml',
         'views/student_views.xml',
         'views/teacher_views.xml',
