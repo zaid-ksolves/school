@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_school_form" model="ir.ui.view">
+            <field name="name">school.form</field>
+            <field name="model">school.school</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="students" widget="many2many_tags"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+
+    <record id="action_school" model="ir.actions.act_window">
+        <field name="name">School</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">school.lecture</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a basic module!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_school_school"
+              parent="menu_school_teacher"
+              name="School"
+              action="action_school"
+              sequence="10"/>
+</odoo>
