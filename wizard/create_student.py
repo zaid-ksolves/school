@@ -1,9 +1,9 @@
-from odoo import api, fields, models,_
+from odoo import models, fields, api
 from datetime import datetime
-from odoo.exceptions import ValidationError
-class SchoolStudent(models.Model):
-    _name = "school.student"
-    _description="Students records"
+
+class CreateStudentWizard(models.TransientModel):
+    _name = 'notice.wizard'
+    _description = 'Notice Wizard'
 
     name = fields.Char(string='Name', required=True)
     rollNo = fields.Char(string='Roll Number')
@@ -40,18 +40,23 @@ class SchoolStudent(models.Model):
                 total += int(marks)
             record.total_marks = total
 
-    @api.onchange('english', 'hindi', 'physics', 'maths', 'chemistry')
-    def onchange_marks(self):
-        self._compute_total_marks()
 
-    # @api.constrains('name')
-    # def check_name(self):
-    #     for record in self:
-    #         student = self.env['school.student'].search([('name','=',record.name),('id','!=',record.id)],order)
-    #         if student:
-    #             raise ValidationError(_('Student Already exists.'))
+    def action_enroll_students(self):
+        student = self.env['school.student']
+        new_student=student.create({
+            'name': self.name,
+            'rollNo': self.rollNo,
+            'age': self.age,
+            'date_of_birth': self.date_of_birth,
+            'gender': self.gender,
+            'english': self.english,
+            'hindi': self.hindi,
+            'maths': self.maths,
+            'physics': self.physics,
+            'chemistry': self.chemistry,
+        })
+        return new_student
 
-    _sql_constraints = [
-        ('unique_tag_name','unique(name)','Name must be unique')
-    ]
-
+    def default_get(self,fields_list):
+        print('Helloo.....')
+        return super(CreateStudentWizard, self).default_get(fields_list)

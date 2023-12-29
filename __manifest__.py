@@ -6,6 +6,9 @@
     'data': [
         'security/ir.model.access.csv',
         'security/security.xml',
+        'wizard/notice_views.xml',
+        'wizard/action_notice_view.xml',
+        'wizard/update_student.xml',
         'views/menu.xml',
         'views/student.xml',
         'views/school_views.xml',
@@ -13,5 +16,6 @@
         'views/teacher_views.xml',
         'views/school_class_views.xml',
         'views/subject_views.xml',
+
     ]
 }
