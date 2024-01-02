@@ -5,7 +5,7 @@ class School(models.Model):
     _description = 'School'
 
     name = fields.Char(string='Name', required=True)
-    students = fields.One2many('school.student', 'school_id', string='Students')
+    students_line = fields.One2many('school.student', 'school_id', string='Students')
     rollNo = fields.Char(string='Roll Number')
 
     @api.onchange('students')

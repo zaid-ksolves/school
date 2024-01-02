@@ -13,13 +13,24 @@
                         <field name="age"/>
                         <field name="date_of_birth"/>
                         <field name="gender"/>
-                        <field name="english"/>
-                        <field name="hindi"/>
-                        <field name="maths"/>
-                        <field name="physics"/>
-                        <field name="chemistry"/>
-                        <field name="total_marks"/>
+
                     </group>
+                    <notebook>
+                        <page string="Subjects">
+                            <group>
+                                <field name="class_line">
+                                    <tree editable="bottom">
+                                        <field name="english"/>
+                                        <field name="hindi"/>
+                                        <field name="maths"/>
+                                        <field name="physics"/>
+                                        <field name="chemistry"/>
+                                        <field name="total_marks"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
                      <footer>
                     <button name="action_update_students" type="object" string="Update" class="btn-primary"/>
                     <button string="Cancel" class="btn-secondary" special="cancel"/>
@@ -29,12 +40,6 @@
         </field>
     </record>
 
-    <record id="action_student_update" model="ir.actions.act_window">
-        <field name="name">Update Students</field>
-        <field name="res_model">update.student.wizard</field>
-        <field name="view_mode">form</field>
-        <field name="view_id" ref="view_update_student_form"/>
-        <field name="target">new</field>
-    </record>
+
 
 </odoo>

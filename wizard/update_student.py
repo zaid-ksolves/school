@@ -13,12 +13,7 @@ class UpdateStudentWizard(models.TransientModel):
     date_of_birth = fields.Date(string='DOB')
     subjects = fields.Many2many('school.class', string='Subjects')
     school_id = fields.Many2one('school.school', string='School')
-    english = fields.Integer(string='English')
-    hindi = fields.Integer(string='Hindi')
-    physics = fields.Integer(string='Physics')
-    maths = fields.Integer(string='Maths')
-    chemistry = fields.Integer(string='Chemistry')
-    total_marks = fields.Integer(string='Total Marks', compute='_compute_total_marks', store=True)
+   #class_line = fields.One2many('school.student_record', 'student_id', string="Class")
 
     @api.depends('date_of_birth')
     def _compute_age(self):
@@ -61,10 +56,11 @@ class UpdateStudentWizard(models.TransientModel):
                 'age': student.age,
                 'date_of_birth': student.date_of_birth,
                 'gender': student.gender,
-                'english': student.english,
-                'hindi': student.hindi,
-                'maths': student.maths,
-                'physics': student.physics,
-                'chemistry': student.chemistry,
+
+                # 'english': student.english,
+                # 'hindi': student.hindi,
+                # 'maths': student.maths,
+                # 'physics': student.physics,
+                # 'chemistry': student.chemistry,
             })
         return res

@@ -5,3 +5,4 @@ school.access_school_teacher,access_school_teacher,school.model_school_teacher,b
 school.access_school_school,access_school_school,school.model_school_school,base.group_user,1,1,1,1
 school.access_notice_wizard,access_notice_wizard,school.model_notice_wizard,base.group_user,1,1,1,1
 school.access_update_student_wizard,access_update_student_wizard,school.model_update_student_wizard,base.group_user,1,1,1,1
+school.access_school_student_record,access_school_student_record,school.model_school_student_record,base.group_user,1,1,1,1

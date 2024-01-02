@@ -8,7 +8,7 @@
                 <form>
                     <group>
                         <field name="name"/>
-                        <field name="students" widget="many2many_tags"/>
+                        <field name="students_line" widget="many2many_tags"/>
                     </group>
                     <group>
                         <field name="rollNo"/>

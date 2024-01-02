@@ -1,44 +1,44 @@
 <?xml version="1.0"?>
 <odoo>
-    <record id="view_notice" model="ir.ui.view">
-        <field name="name">notice.wizard.form</field>
-        <field name="model">notice.wizard</field>
-        <field name="arch" type="xml">
-            <form string="Student Details">
-                <group>
-                    <field name="name"/>
-                    <field name="rollNo"/>
-                    <field name="age"/>
-                    <field name="date_of_birth"/>
-                    <field name="gender"/>
-                </group>
-                  <notebook>
-                        <page string="Subjects">
-                            <group>
-                                <field name="english"/>
-                                <field name="hindi"/>
-                                <field name="maths"/>
-                                <field name="physics"/>
-                                <field name="chemistry"/>
-                                <field name="total_marks"/>
-                            </group>
-                        </page>
-                    </notebook>
-                <footer>
-                    <button name="action_enroll_students" type="object" string="Create" class="btn-primary"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel"/>
-                </footer>
-            </form>
-        </field>
-    </record>
+<!--    <record id="view_notice" model="ir.ui.view">-->
+<!--        <field name="name">notice.wizard.form</field>-->
+<!--        <field name="model">notice.wizard</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Student Details">-->
+<!--                <group>-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="rollNo"/>-->
+<!--                    <field name="age"/>-->
+<!--                    <field name="date_of_birth"/>-->
+<!--                    <field name="gender"/>-->
+<!--                </group>-->
+<!--                  <notebook>-->
+<!--                        <page string="Subjects">-->
+<!--                            <group>-->
+<!--                                <field name="english"/>-->
+<!--                                <field name="hindi"/>-->
+<!--                                <field name="maths"/>-->
+<!--                                <field name="physics"/>-->
+<!--                                <field name="chemistry"/>-->
+<!--                                <field name="total_marks"/>-->
+<!--                            </group>-->
+<!--                        </page>-->
+<!--                    </notebook>-->
+<!--                <footer>-->
+<!--                    <button name="action_enroll_students" type="object" string="Create" class="btn-primary"/>-->
+<!--                    <button string="Cancel" class="btn-secondary" special="cancel"/>-->
+<!--                </footer>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
 
-    <record id="action_notice" model="ir.actions.act_window">
-        <field name="name">Enroll Students</field>
-        <field name="res_model">notice.wizard</field>
-        <field name="view_mode">form</field>
-        <field name="view_id" ref="view_notice"/>
-        <field name="target">new</field>
-    </record>
+<!--    <record id="action_notice" model="ir.actions.act_window">-->
+<!--        <field name="name">Enroll Students</field>-->
+<!--        <field name="res_model">notice.wizard</field>-->
+<!--        <field name="view_mode">form</field>-->
+<!--        <field name="view_id" ref="view_notice"/>-->
+<!--        <field name="target">new</field>-->
+<!--    </record>-->
 
     <!--    <menuitem id="menu_notice"-->
     <!--              parent="school.menu_school_root"-->

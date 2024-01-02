@@ -10,14 +10,8 @@ class SchoolStudent(models.Model):
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string='Gender')
     age = fields.Integer(string='Age', compute='_compute_age')
     date_of_birth = fields.Date(string='DOB')
-    subjects = fields.Many2many('school.class', string='Subjects')
     school_id = fields.Many2one('school.school', string='School')
-    english = fields.Integer(string='English')
-    hindi = fields.Integer(string='Hindi')
-    physics = fields.Integer(string='Physics')
-    maths = fields.Integer(string='Maths')
-    chemistry = fields.Integer(string='Chemistry')
-    total_marks = fields.Integer(string='Total Marks', compute='_compute_total_marks', store=True)
+    class_line = fields.One2many('school.student_record','student_id',string="Class")
 
     @api.depends('date_of_birth')
     def _compute_age(self):
@@ -54,4 +48,5 @@ class SchoolStudent(models.Model):
     _sql_constraints = [
         ('unique_tag_name','unique(name)','Name must be unique')
     ]
+
 

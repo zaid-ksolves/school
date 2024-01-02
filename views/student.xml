@@ -6,11 +6,11 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">school.student</field>
         <field name="view_mode">tree,form,kanban</field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                Create a basic module!
-            </p>
-        </field>
+<!--        <field name="help" type="html">-->
+<!--            <p class="o_view_nocontent_smiling_face">-->
+<!--                Create a basic module!-->
+<!--            </p>-->
+<!--        </field>-->
     </record>
 
 
@@ -19,10 +19,7 @@
         <field name="model">school.student</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <button name="%(school.action_notice)d" type="action" string="Create" class="btn-primary"/>
-                    <button name="%(school.action_student_update)d" type="action" string="Update" class="btn-primary"/>
-                </header>
+
                 <sheet>
                     <group>
                         <field name="name"/>
@@ -34,12 +31,18 @@
                     <notebook>
                         <page string="Subjects">
                             <group>
-                                <field name="english"/>
-                                <field name="hindi"/>
-                                <field name="maths"/>
-                                <field name="physics"/>
-                                <field name="chemistry"/>
-                                <field name="total_marks"/>
+                                <field name="class_line" string="Subjects">
+                                    <tree editable="bottom">
+                                        <field name="class_id" string="Class"/>
+                                        <field name="english"/>
+                                        <field name="hindi"/>
+                                        <field name="maths"/>
+                                        <field name="physics"/>
+                                        <field name="chemistry"/>
+                                        <field name="total_marks"/>
+                                    </tree>
+                                </field>
+
                             </group>
                         </page>
                     </notebook>
@@ -57,29 +60,21 @@
                 <field name="rollNo"/>
                 <field name="age"/>
                 <field name="date_of_birth"/>
-                <!--                <field name="subjects"/>-->
-                <field name="gender"/>
-                <field name="english"/>
-                <field name="hindi"/>
-                <field name="maths"/>
-                <field name="physics"/>
-                <field name="chemistry"/>
-                <field name="total_marks"/>
+
             </tree>
         </field>
     </record>
 
-    <record id="action_school_student" model="ir.actions.act_window">
-        <field name="name">Students</field>
-        <field name="res_model">school.student</field>
-        <field name="view_mode">tree,form</field>
-        <field name="type">ir.actions.act_window</field>
-    </record>
+    <!--    <record id="action_school_student" model="ir.actions.act_window">-->
+    <!--            <field name="name">Students</field>-->
+    <!--            <field name="res_model">school.student</field>-->
+    <!--            <field name="view_mode">tree,form</field>-->
+    <!--            <field name="type">ir.actions.act_window</field>-->
+    <!--        </record>-->
 
     <menuitem id="menu_school_teacher"
               parent="menu_school_root"
               name="Menu"
-              action="action_school_student"
               sequence="10"/>
     <record id="view_student_form" model="ir.ui.view">
         <field name="name">student.form</field>
@@ -90,14 +85,7 @@
                     <field name="name"/>
                     <field name="gender"/>
                     <field name="age"/>
-                    <!--                    <field name="subjects" widget="many2many_tags"/>-->
-                    <field name="school_id"/>
-                    <field name="english"/>
-                    <field name="hindi"/>
-                    <field name="maths"/>
-                    <field name="physics"/>
-                    <field name="chemistry"/>
-                    <field name="total_marks"/>
+
                 </group>
             </form>
         </field>
